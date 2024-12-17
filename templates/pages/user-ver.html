@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create_user')}}">Add Usuário</a></h2>
+<h2><a href="{{url_for('ver_user')}}">Ver Usuário</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+
+<div>
+    <div class="teste">
+        <h1>Informaçôes de {{user['nome']}}:</h1>
+        <li>ID = {{user['id']}}</li>
+    </div> 
+</div>
+
+<h2><a href="{{url_for('index')}}">Pagina Inicial</a></h2>
+{% endblock %}
