@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create_user')}}">Add Usuário</a></h2>
+<h2><a href="{{url_for('ver_user')}}">Ver Usuário</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+
+<div>
+    <h1>Usuarios:</h1>
+    <div class="teste">
+        {% for user in usuarios %}
+            <a href="{{url_for('ver', id=user['id'])}}"><li>{{user['nome']}}</li></a>
+        {% endfor %}
+    </div> 
+    <h1>OBS: Clique no usuario para ver suas informações.</h1>
+    <h2><a href="{{url_for('create_evento')}}">criar peças</a></h2>
+</div>
+
+<h2><a href="{{url_for('index')}}">Pagina Inicial</a></h2>
+{% endblock %}
